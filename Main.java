@@ -1,7 +1,8 @@
 
 //Computer Class 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 interface Computer {
 
@@ -183,20 +184,72 @@ class Main {
 
         //    int num = 5;
         //    int nums[] = new int[5];
-        Map<String, Integer> Students = new HashMap<>();
+        // Map<String, Integer> Students = new HashMap<>();
+        // List<Integer> nums = Arrays.asList(3, 5, 7, 4, 2, 6);
+        List<String> products = Arrays.asList("Laptop", "Pen", "Notebook", "Headphones", "Smartphone");
 
-        Students.put("Josh", 25);
-        Students.put("Jay", 89);
-        Students.put("Chris", 70);
-        Students.put("Shu", 25);
-        Students.put("Tuffic", 25);
+        // TODO: Print the original list
+        System.out.println(products);
+        // TODO: Filter names longer than 5 characters, convert to uppercase, sort, and collect into a list
+        List<String> product = products.stream()
+                .filter(n -> n.length() > 5)
+                .map(String::toUpperCase)
+                .sorted()
+                .toList();
 
-        // System.out.println(Students.keySet());
-        for (String name : Students.keySet()) {
-            System.out.println(
-                    name + " : " + Students.get(name));
-        }
+        // TODO: Print the filtered list
+        System.out.println(product);
 
+        List<String> name = Arrays.asList("Jash", "Jey", "Paul");
+
+        String names = name.stream()
+                .filter(str -> str.contains("o"))
+                .findFirst()
+                .orElse("Not found");
+        // .toList();
+
+        names.forEach(n -> System.out.println(n));
+
+        List<String> test = Arrays.asList("Jash", "Jey", "Paul");
+
+        // List<String> testname = test.stream()
+        //         .map(n -> n.toUpperCase())
+        //         .toList();
+        List<String> testname = test.stream()
+                .map(String::toUpperCase)
+                .toList();
+
+        System.out.println(testname);
+
+        // System.out.println(names);
+        // nums.forEach(n -> System.out.println(n));
+        // for (int n : nums) {
+        //     System.out.println(n);
+        // }
+        // int result = nums.stream()
+        //         .filter(n -> n % 2 == 0)
+        //         .map(n -> n *= 2)
+        //         .reduce(0, (c, e) -> c + e);
+        // System.out.println(result);
+        // int sum = 0; 
+        // for (int n : nums) {
+        //     if (n % 2 == 0) {
+        //         n = n * 2;
+        //         // sum = +n;
+        //     }
+        //     sum += n;
+        // }
+        // System.out.println(sum);
+        // Students.put("Josh", 25);
+        // Students.put("Jay", 89);
+        // Students.put("Chris", 70);
+        // Students.put("Shu", 25);
+        // Students.put("Tuffic", 25);
+        // // System.out.println(Students.keySet());
+        // for (String name : Students.keySet()) {
+        //     System.out.println(
+        //             name + " : " + Students.get(name));
+        // }
         // Set<Integer> nums = new TreeSet<>();
         // nums.add(5);
         // nums.add(55);
