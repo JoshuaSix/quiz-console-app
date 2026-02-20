@@ -2,7 +2,6 @@
 //Computer Class 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 interface Computer {
 
@@ -208,8 +207,7 @@ class Main {
                 .orElse("Not found");
         // .toList();
 
-        names.forEach(n -> System.out.println(n));
-
+        // names.forEach(n -> System.out.println(n));
         List<String> test = Arrays.asList("Jash", "Jey", "Paul");
 
         // List<String> testname = test.stream()
